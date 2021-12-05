@@ -1,6 +1,9 @@
+const Manager = require('./lib/Manager.js')
+const Engineer = require('./lib/Engineer.js')
+const Intern = require('./lib/Intern.js')
 const fs = require('fs');
 
-
+// template for top of page
 const topPage =`
 
 <!DOCTYPE html>
@@ -28,7 +31,7 @@ const topPage =`
     <main class="container row mx-auto mt-5">
 `
 
-
+// template for bottom of page
 const bottomPage = `
     </main>
 
@@ -48,3 +51,78 @@ const bottomPage = `
     </body>
 </html>
 `
+// save funcition 
+function writeToFile(fileName, data){
+    fs.writeFile(fileName, data, (err) =>
+    err ? console.error(err) : console.log('Save index.html Success!'))
+}
+// save index.html to dist directory
+function renderHTML() {
+    writeToFile('dist/index.html', generateHTMLPage(squad))
+}
+
+
+// render index.html
+function generateHTMLPage() {
+
+}
+// Render Employee card
+function employeeSquares(members) {
+    const squares = []
+    // iterate over squad
+    for(let i=0; i < members[i]; i++) {
+        const squad = members[i];
+        switch(squad.getRole()) {
+            case 'Manager':
+                const manager = new Manager(squad.name, squad.id, squad.email, squad.officeNumber);
+                squares.push(generateManagerSquare)
+                return;
+            case 'Engineer':
+                const engineer = new Engineer(squad.name, squad.id, squad.email, squad.github);
+                squares.push(generateEngineerSquare)
+                return;
+            case 'Intern':
+                const intern = new Intern(squad.name, squad.id, squad.email, squad.school);
+                squares.push(generateInternSquare)
+                return;
+        }
+
+    }
+    return squares.join(``)
+}
+
+// Populate Manager Card
+let generateManagerSquare = (Manager) => {
+    return`
+    <div class="card m-3 shadow-lg">
+        <div class="card-header'>
+            <h5 class="card-title">
+                ${Manager.getName()}
+            </h5>
+            <h6 class="card-text">  
+                ${Manager.getRole()}
+            </h6>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li
+                <li
+                <li
+
+            </ul>
+        </div>
+    </div>
+    `
+}
+
+// Populate Engineer Card
+let generateEngineerSquare = (Engineer) => {
+
+}
+
+// Populate Intern Card
+let generateInernSquare = (Intern) => {
+
+}
+
+module.exports = renderHTML;
