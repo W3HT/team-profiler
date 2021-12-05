@@ -92,8 +92,8 @@ function employeeSquares(members) {
 }
 
 // Populate Manager Card
-let generateManagerSquare = (Manager) => {
-    return`
+function generateManagerSquare(Manager) {
+    return `
     <div class="card m-3 shadow-lg">
         <div class="card-header'>
             <h5 class="card-title">
@@ -104,24 +104,64 @@ let generateManagerSquare = (Manager) => {
             </h6>
         </div>
         <div class="card-body">
-            <ul>
-                <li
-                <li
-                <li
+            <ul class="list-group list-group-flush>
+                <li class="list-group-item">ID#: ${Manager.getId()} </li>
+                <li class="list-group-item"><a href="mailto:${Manager.getEmail()}">Email:${Manager.getEmail()}</a></li>
+                <li class="list-group-item">Office Number: ${Manager.getOfficeNumber()} </li>
 
             </ul>
         </div>
     </div>
-    `
+    `;
 }
 
 // Populate Engineer Card
-let generateEngineerSquare = (Engineer) => {
+function generateEngineerSquare(Engineer) {
+    return `
+    <div class="card m-3 shadow-lg">
+        <div class="card-header'>
+            <h5 class="card-title">
+                ${Engineer.getName()}
+            </h5>
+            <h6 class="card-text">  
+                ${Engineer.getRole()}
+            </h6>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush>
+                <li class="list-group-item">ID#: ${Engineer.getId()} </li>
+                <li class="list-group-item"><a href="mailto:${Engineer.getEmail()}">Email:${Engineer.getEmail()}</a></li>
+                <li class="list-group-item">Office Number: ${Engineer.getGithub()} </li>
+
+            </ul>
+        </div>
+    </div>
+    `;
 
 }
 
 // Populate Intern Card
-let generateInernSquare = (Intern) => {
+function generateInternSquare(Intern) {
+    return `
+    <div class="card m-3 shadow-lg">
+        <div class="card-header'>
+            <h5 class="card-title">
+                ${Intern.getName()}
+            </h5>
+            <h6 class="card-text">  
+                ${Intern.getRole()}
+            </h6>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush>
+                <li class="list-group-item">ID#: ${Intern.getId()} </li>
+                <li class="list-group-item"><a href="mailto:${Intern.getEmail()}">Email:${Intern.getEmail()}</a></li>
+                <li class="list-group-item">Office Number: ${Intern.getSchool()} </li>
+
+            </ul>
+        </div>
+    </div>
+    `;
 
 }
 
