@@ -1,0 +1,26 @@
+{
+  "name": "team-profiler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/W3HT/team-profiler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/W3HT/team-profiler/issues"
+  },
+  "homepage": "https://github.com/W3HT/team-profiler#readme",
+  "dependencies": {
+    "jest": "^27.4.3"
+  }
+}
