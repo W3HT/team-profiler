@@ -23,7 +23,7 @@ const topPage =`
     <nav>
         <nav class="nav justify-content-center">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1"></span>
+                <span class="navbar-brand mb-0 h1 bg-warning justify-content-center">My Team</span>
             </div>
         </nav>
     </nav>
@@ -102,8 +102,8 @@ function employeeSquares(members) {
 // Populate Manager Card
 function generateManagerSquare(Manager) {
     return `
-    <div class="card m-3 shadow-lg">
-        <div class="card-header'>
+    <div class="card m-3 shadow-lg container-fluid">
+        <div class="card-header bg-primary">
             <h5 class="card-title">
                 ${Manager.getName()}
             </h5>
@@ -127,7 +127,7 @@ function generateManagerSquare(Manager) {
 function generateEngineerSquare(Engineer) {
     return `
     <div class="card m-3 shadow-lg">
-        <div class="card-header'>
+        <div class="card-header bg-primary container-fluid">
             <h5 class="card-title">
                 ${Engineer.getName()}
             </h5>
@@ -136,10 +136,10 @@ function generateEngineerSquare(Engineer) {
             </h6>
         </div>
         <div class="card-body">
-            <ul class="list-group list-group-flush>
+            <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID#: ${Engineer.getId()} </li>
                 <li class="list-group-item"><a href="mailto:${Engineer.getEmail()}">Email:${Engineer.getEmail()}</a></li>
-                <li class="list-group-item">Office Number: ${Engineer.getGithub()} </li>
+                <li class="list-group-item">Github:<a href="https://github.com/${Engineer.getGithub()}</a>${Engineer.getGithub()} </li>
 
             </ul>
         </div>
@@ -152,7 +152,7 @@ function generateEngineerSquare(Engineer) {
 function generateInternSquare(Intern) {
     return `
     <div class="card m-3 shadow-lg">
-        <div class="card-header'>
+        <div class="card-header bg-primary">
             <h5 class="card-title">
                 ${Intern.getName()}
             </h5>
@@ -161,10 +161,10 @@ function generateInternSquare(Intern) {
             </h6>
         </div>
         <div class="card-body">
-            <ul class="list-group list-group-flush>
+            <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID#: ${Intern.getId()} </li>
                 <li class="list-group-item"><a href="mailto:${Intern.getEmail()}">Email:${Intern.getEmail()}</a></li>
-                <li class="list-group-item">Office Number: ${Intern.getSchool()} </li>
+                <li class="list-group-item">School: ${Intern.getSchool()} </li>
 
             </ul>
         </div>

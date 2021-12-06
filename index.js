@@ -51,7 +51,9 @@ async function managerRole() {
     let manager = new Manager(res.name, res.id, res.email, res.officeNumber);
     squad.push(manager);
 
-    if (res.role === "Engineer") {
+    if (res.role === "Manager") {
+      managerRole();
+    } else if (res.role === "Engineer") {
       engineerRole();
     } else if (res.role === "Intern") {
       internRole();
@@ -95,6 +97,8 @@ async function engineerRole() {
 
     if (res.role === "Manager") {
       managerRole();
+    } else if (res.role === "Engineer") {
+      engineerRole();
     } else if (res.role === "Intern") {
       internRole();
     } else renderHTML(squad);
@@ -137,9 +141,11 @@ async function internRole(res) {
     squad.push(intern);
 
     if (res.role === "Manager") {
-      managerrRole();
+      managerRole();
     } else if (res.role === "Engineer") {
       engineerRole();
+    } else if (res.role === "Intern") {
+      internRole();
     } else renderHTML(squad);
   });
 }
