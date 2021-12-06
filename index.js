@@ -42,7 +42,7 @@ const managerQuestions = [
     type: "list",
     name: "role",
     message: "Who would you like to add next",
-    choices: ["Engineer", "Intern", "I do not want to add anymore members"],
+    choices: ["Manager", "Engineer", "Intern", "I do not want to add anymore members"],
   },
 ];
 
@@ -87,7 +87,7 @@ const engineerQuestions = [
     type: "list",
     name: "role",
     message: "Who would you like to add next",
-    choices: ["Manager", "Intern", "I do not want to add anymore members"],
+    choices: ["Manager", "Engineer", "Intern", "I do not want to add anymore members"],
   },
 ];
 async function engineerRole() {
@@ -131,7 +131,7 @@ const internQuestions = [
     type: "list",
     name: "role",
     message: "Who would you like to add next",
-    choices: ["Manager", "Engineer", "I do not want to add anymore members"],
+    choices: ["Manager", "Engineer", "Intern", "I do not want to add anymore members"],
   },
 ];
 

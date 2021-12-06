@@ -15,21 +15,23 @@ const topPage =`
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <nav>
-        <nav class="nav justify-content-center">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1 bg-warning justify-content-center">My Team</span>
-            </div>
+    <header>
+        <nav>
+            <nav class="nav justify-content-center">
+                <div class="container-fluid  bg-danger">
+                    <span class="navbar-brand py-4 h1 d-flex justify-content-center text-white">My Team</span>
+                </div>
+            </nav>
         </nav>
-    </nav>
+    </header>
 
     
-    <main class="container row mx-auto mt-5">
+    <main class="container row mx-auto p-1 mt-5">
 `
 
 // template for bottom of page
@@ -102,19 +104,19 @@ function employeeSquares(members) {
 // Populate Manager Card
 function generateManagerSquare(Manager) {
     return `
-    <div class="card m-3 shadow-lg container-fluid">
-        <div class="card-header bg-primary">
-            <h5 class="card-title">
+    <div class="card shadow-lg m-3" style="width: 18rem">
+        <div class="card-body container-fluid" style="background:blue" >
+            <h5 class="card-title text-white">
                 ${Manager.getName()}
             </h5>
-            <h6 class="card-text">  
+            <h6 class="card-text text-white"><i class="bi bi-cup"></i> 
                 ${Manager.getRole()}
             </h6>
         </div>
         <div class="card-body">
-            <ul class="list-group list-group-flush>
+            <ul class="list-group">
                 <li class="list-group-item">ID#: ${Manager.getId()} </li>
-                <li class="list-group-item"><a href="mailto:${Manager.getEmail()}">Email:${Manager.getEmail()}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${Manager.getEmail()}">${Manager.getEmail()}</a></li>
                 <li class="list-group-item">Office Number: ${Manager.getOfficeNumber()} </li>
 
             </ul>
@@ -126,20 +128,20 @@ function generateManagerSquare(Manager) {
 // Populate Engineer Card
 function generateEngineerSquare(Engineer) {
     return `
-    <div class="card m-3 shadow-lg">
-        <div class="card-header bg-primary container-fluid">
-            <h5 class="card-title">
+    <div class="card shadow-lg m-3" style="width: 18rem">
+        <div class="card-body bg-primary">
+            <h5 class="card-title text-white">
                 ${Engineer.getName()}
             </h5>
-            <h6 class="card-text">  
+            <h6 class="card-text text-white"><i class="bi bi-mortarboard"></i>
                 ${Engineer.getRole()}
             </h6>
         </div>
         <div class="card-body">
-            <ul class="list-group list-group-flush">
+            <ul class="list-group">
                 <li class="list-group-item">ID#: ${Engineer.getId()} </li>
-                <li class="list-group-item"><a href="mailto:${Engineer.getEmail()}">Email:${Engineer.getEmail()}</a></li>
-                <li class="list-group-item">Github:<a href="https://github.com/${Engineer.getGithub()}</a>${Engineer.getGithub()} </li>
+                <li class="list-group-item">Email: <a href="mailto:${Engineer.getEmail()}">${Engineer.getEmail()}</a></li>
+                <li class="list-group-item">Github: <a href="https://github.com/${Engineer.getGithub()}">${Engineer.getGithub()}</a></li>
 
             </ul>
         </div>
@@ -151,19 +153,19 @@ function generateEngineerSquare(Engineer) {
 // Populate Intern Card
 function generateInternSquare(Intern) {
     return `
-    <div class="card m-3 shadow-lg">
-        <div class="card-header bg-primary">
-            <h5 class="card-title">
+    <div class="car shadow-lg m-3" style="width: 18rem">
+        <div class="card-body bg-primary">
+            <h5 class="card-title text-white">
                 ${Intern.getName()}
             </h5>
-            <h6 class="card-text">  
+            <h6 class="card-text text-white"><i class="bi-alarm"></i>  
                 ${Intern.getRole()}
             </h6>
         </div>
         <div class="card-body">
-            <ul class="list-group list-group-flush">
+            <ul class="list-group">
                 <li class="list-group-item">ID#: ${Intern.getId()} </li>
-                <li class="list-group-item"><a href="mailto:${Intern.getEmail()}">Email:${Intern.getEmail()}</a></li>
+                <li class="list-group-item">Email: <a href="mailto:${Intern.getEmail()}">${Intern.getEmail()}</a></li>
                 <li class="list-group-item">School: ${Intern.getSchool()} </li>
 
             </ul>
