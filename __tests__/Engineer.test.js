@@ -1,10 +1,10 @@
 const Employee = require('../lib/Employee.js')
 const Engineer = require('../lib/Engineer.js')
 
+
 // test for setting github
 test('test for setting github', () => {
-    const result = 'johnsHub'
-    const newEngineer = new Engineer( 'John', '2', 'john@gmail.com', result ) 
+    const newEngineer = new Engineer( 'John', '2', 'john@gmail.com', 'johnsHub' ) 
     expect( newEngineer.github).toBe('johnsHub')
 }) 
 

@@ -1,7 +1,8 @@
-const Manager = require('./lib/Manager.js')
-const Engineer = require('./lib/Engineer.js')
-const Intern = require('./lib/Intern.js')
+// const Manager = require('./lib/Manager.js')
+// const Engineer = require('./lib/Engineer.js')
+// const Intern = require('./lib/Intern.js')
 const fs = require('fs');
+
 
 // template for top of page
 const topPage =`
@@ -57,37 +58,44 @@ function writeToFile(fileName, data){
     err ? console.error(err) : console.log('Save index.html Success!'))
 }
 // save index.html to dist directory
-function renderHTML() {
+function renderHTML(squad) {
     writeToFile('dist/index.html', generateHTMLPage(squad))
 }
 
 
 // render index.html
-function generateHTMLPage() {
+function generateHTMLPage(members) {
+return `
+${topPage}
+${employeeSquares(members)}
+${bottomPage}
+`
 
 }
 // Render Employee card
 function employeeSquares(members) {
     const squares = []
     // iterate over squad
-    for(let i=0; i < members[i]; i++) {
+    for(let i=0; i < members.length; i++) {
         const squad = members[i];
+        // console.log(squad.getRole())
         switch(squad.getRole()) {
             case 'Manager':
-                const manager = new Manager(squad.name, squad.id, squad.email, squad.officeNumber);
-                squares.push(generateManagerSquare)
-                return;
+                // const manager = new Manager(squad.name, squad.id, squad.email, squad.officeNumber);
+                squares.push(generateManagerSquare(squad))
+                break;
             case 'Engineer':
-                const engineer = new Engineer(squad.name, squad.id, squad.email, squad.github);
-                squares.push(generateEngineerSquare)
-                return;
+                // const engineer = new Engineer(squad.name, squad.id, squad.email, squad.github);
+                squares.push(generateEngineerSquare(squad))
+                break;
             case 'Intern':
-                const intern = new Intern(squad.name, squad.id, squad.email, squad.school);
-                squares.push(generateInternSquare)
-                return;
+                // const intern = new Intern(squad.name, squad.id, squad.email, squad.school);
+                squares.push(generateInternSquare(squad))
+                break;
         }
 
     }
+    // console.log(squares)
     return squares.join(``)
 }
 
