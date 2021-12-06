@@ -104,8 +104,8 @@ function employeeSquares(members) {
 // Populate Manager Card
 function generateManagerSquare(Manager) {
     return `
-    <div class="card shadow-lg m-3" style="width: 18rem">
-        <div class="card-body container-fluid" style="background:blue" >
+    <div class="card shadow m-3" style="width: 18rem">
+        <div class="card-body bg-primary" >
             <h5 class="card-title text-white">
                 ${Manager.getName()}
             </h5>
@@ -128,7 +128,7 @@ function generateManagerSquare(Manager) {
 // Populate Engineer Card
 function generateEngineerSquare(Engineer) {
     return `
-    <div class="card shadow-lg m-3" style="width: 18rem">
+    <div class="card shadow m-3" style="width: 18rem">
         <div class="card-body bg-primary">
             <h5 class="card-title text-white">
                 ${Engineer.getName()}
@@ -153,7 +153,7 @@ function generateEngineerSquare(Engineer) {
 // Populate Intern Card
 function generateInternSquare(Intern) {
     return `
-    <div class="car shadow-lg m-3" style="width: 18rem">
+    <div class="car shadow m-3" style="width: 18rem">
         <div class="card-body bg-primary">
             <h5 class="card-title text-white">
                 ${Intern.getName()}
