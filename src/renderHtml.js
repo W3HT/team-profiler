@@ -133,7 +133,7 @@ function generateEngineerSquare(Engineer) {
             <h5 class="card-title text-white">
                 ${Engineer.getName()}
             </h5>
-            <h6 class="card-text text-white"><i class="bi bi-mortarboard"></i>
+            <h6 class="card-text text-white"><i class="bi bi-eyeglasses"></i>
                 ${Engineer.getRole()}
             </h6>
         </div>
@@ -158,7 +158,7 @@ function generateInternSquare(Intern) {
             <h5 class="card-title text-white">
                 ${Intern.getName()}
             </h5>
-            <h6 class="card-text text-white"><i class="bi-alarm"></i>  
+            <h6 class="card-text text-white"><i class="bi bi-mortarboard"></i> 
                 ${Intern.getRole()}
             </h6>
         </div>
